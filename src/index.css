@@ -1,0 +1,123 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #E63946; border-radius: 2px; }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .glass-red {
+    background: rgba(230,57,70,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(230,57,70,0.15);
+  }
+  .btn-primary {
+    background: #E63946;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(230,57,70,0.6);
+    transform: translateY(-2px);
+    background: #ff4757;
+  }
+  .btn-outline {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
+  }
+  .btn-outline:hover {
+    border-color: #E63946;
+    box-shadow: 0 0 20px rgba(230,57,70,0.3);
+    color: #E63946;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    letter-spacing: 0.05em;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .section-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #E63946;
+    font-weight: 600;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #E63946, #ff8c94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, #E63946, #ff8c94);
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(230,57,70,0.8);
+  }
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-ticker { animation: ticker 30s linear infinite; }
+}
