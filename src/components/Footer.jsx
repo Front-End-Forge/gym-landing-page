@@ -1,6 +1,7 @@
 // import { motion } from 'framer-motion';
 import { Share2, MessageCircle, Video, Globe, Zap, ArrowUp } from 'lucide-react';
 import { navLinks } from '../data/siteData';
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
